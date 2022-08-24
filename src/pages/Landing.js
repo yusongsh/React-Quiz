@@ -15,7 +15,7 @@ function Landing() {
             </p>
             <div className="flex flex-row py-3">
               <svg
-                class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2"
+                className="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >
@@ -25,14 +25,17 @@ function Landing() {
                   fill="none"
                 />
               </svg>
-              <p class="ml-4">
+              <p className="ml-4">
                 You will have{" "}
-                <span class="font-semibold text-tx-light ">3 questions</span>.
+                <span className="font-semibold text-tx-light ">
+                  3 questions
+                </span>
+                .
               </p>
             </div>
             <div className="flex flex-row py-3">
               <svg
-                class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2"
+                className="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >
@@ -42,14 +45,15 @@ function Landing() {
                   fill="none"
                 />
               </svg>
-              <p class="ml-4">
+              <p className="ml-4">
                 Each question have{" "}
-                <span class="font-semibold text-tx-light "> 4 choices</span>.
+                <span className="font-semibold text-tx-light "> 4 choices</span>
+                .
               </p>
             </div>
             <div className="flex flex-row py-3">
               <svg
-                class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2"
+                className="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >
@@ -59,7 +63,7 @@ function Landing() {
                   fill="none"
                 />
               </svg>
-              <p class="ml-4">No time limits, good luck!</p>
+              <p className="ml-4">No time limits, good luck!</p>
             </div>
           </div>
           <div className="pt-8">

@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+// ------- Questions for the quiz app --------
 const questions = [
   {
     question: "What is the name of the coffee shop in the sitcom Friends?",
@@ -97,16 +98,14 @@ function Quiz() {
             <div>
               <div className="flex flex-col items-start py-8">
                 {questions[currentQes].answerOpts.map((answeropt) => (
-                  <>
-                    <div>
-                      <button
-                        className="hover:bg-slate-300 hover:text-bg-dark text-white border px-4 py-2 my-2 rounded font-semibold"
-                        onClick={() => handleBtnClick(answeropt.isCorrect)}
-                      >
-                        {answeropt.answer}
-                      </button>
-                    </div>
-                  </>
+                  <div key={`${answeropt.answer}-${Math.floor(Math.random())}`}>
+                    <button
+                      className="hover:bg-slate-300 hover:text-bg-dark text-white border px-4 py-2 my-2 rounded font-semibold"
+                      onClick={() => handleBtnClick(answeropt.isCorrect)}
+                    >
+                      {answeropt.answer}
+                    </button>
+                  </div>
                 ))}
               </div>
             </div>
