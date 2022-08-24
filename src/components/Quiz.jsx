@@ -36,24 +36,28 @@ const questions = [
 
 function Quiz() {
   const [currentQes, setCurrentQes] = useState(0);
-  const [score, setScore] = useState(false);
+  const [showScore, setShowScore] = useState(false);
+  const [score, setScore] = useState(0);
 
-  const handleBtnClick = () => {
+  const handleBtnClick = (isCorrect) => {
+    if (isCorrect === true) {
+      setScore(score + 1);
+    }
     const nextQes = currentQes + 1;
     if (nextQes < questions.length) {
       setCurrentQes(nextQes);
     } else {
-      setScore(true);
+      setShowScore(true);
     }
   };
 
   return (
     <>
-      {score ? (
+      {showScore ? (
         <div className="h-screen bg-bg-white relative flex min-h-screen flex-col items-center justify-center">
           <div className="p-40 max-w-2xl text-white bg-bg-dark rounded-xl shadow-md flex flex-col items-center ">
             <p className="py-10 font-medium text-2xl ">
-              Your score: 1 out of 3
+              You got {score} of of 3 correct!
             </p>
             <Link to="/">
               <button className="bg-slate-300 text-bg-dark px-4 py-2 rounded font-semibold">
@@ -77,7 +81,7 @@ function Quiz() {
               {questions[currentQes].answerOpts.map((answeropt) => (
                 <button
                   className="hover:bg-slate-300 hover:text-bg-dark text-white border px-4 py-2 my-2 rounded font-semibold"
-                  onClick={handleBtnClick}
+                  onClick={() => handleBtnClick(answeropt.isCorrect)}
                 >
                   {answeropt.answer}
                 </button>
