@@ -31,7 +31,6 @@ const questions = [
     ],
   },
 ];
-
 // console.log(questions);
 
 function Quiz() {
@@ -51,19 +50,37 @@ function Quiz() {
     }
   };
 
+  const reStart = () => {
+    setCurrentQes(0);
+    setShowScore(false);
+    setScore(0);
+  };
+
   return (
     <>
       {showScore ? (
         <div className="h-screen bg-bg-white relative flex min-h-screen flex-col items-center justify-center">
           <div className="p-40 max-w-2xl text-white bg-bg-dark rounded-xl shadow-md flex flex-col items-center ">
             <p className="py-10 font-medium text-2xl ">
-              You got {score} of of 3 correct!
+              You got {score} of of 3 correct! 🎉
             </p>
-            <Link to="/">
-              <button className="bg-slate-300 text-bg-dark px-4 py-2 rounded font-semibold">
-                Start Over
-              </button>
-            </Link>
+            <div className="flex flex-row">
+              <div className="px-2">
+                <Link to="/">
+                  <button className="bg-slate-300 text-bg-dark px-4 py-2 rounded font-semibold hover:bg-slate-400 hover:text-white">
+                    Back to 🏠
+                  </button>
+                </Link>
+              </div>
+              <div className="px-2">
+                <button
+                  className="bg-slate-300 text-bg-dark px-4 py-2 rounded font-semibold hover:bg-slate-400 hover:text-white"
+                  onClick={reStart}
+                >
+                  Start Over
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       ) : (
@@ -77,15 +94,21 @@ function Quiz() {
                 {questions[currentQes].question}
               </p>
             </div>
-            <div className="flex flex-col items-start py-8">
-              {questions[currentQes].answerOpts.map((answeropt) => (
-                <button
-                  className="hover:bg-slate-300 hover:text-bg-dark text-white border px-4 py-2 my-2 rounded font-semibold"
-                  onClick={() => handleBtnClick(answeropt.isCorrect)}
-                >
-                  {answeropt.answer}
-                </button>
-              ))}
+            <div>
+              <div className="flex flex-col items-start py-8">
+                {questions[currentQes].answerOpts.map((answeropt) => (
+                  <>
+                    <div>
+                      <button
+                        className="hover:bg-slate-300 hover:text-bg-dark text-white border px-4 py-2 my-2 rounded font-semibold"
+                        onClick={() => handleBtnClick(answeropt.isCorrect)}
+                      >
+                        {answeropt.answer}
+                      </button>
+                    </div>
+                  </>
+                ))}
+              </div>
             </div>
           </div>
         </div>

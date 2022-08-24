@@ -64,8 +64,8 @@ function Landing() {
           </div>
           <div className="pt-8">
             <Link to="/quiz">
-              <button className="bg-slate-300 text-bg-dark px-4 py-2 rounded font-semibold">
-                Start Quiz
+              <button className="bg-slate-300 text-bg-dark px-4 py-2 rounded font-semibold hover:bg-slate-400 hover:text-white">
+                Start Quiz 👉🏻
               </button>
             </Link>
           </div>
