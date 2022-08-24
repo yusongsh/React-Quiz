@@ -21,12 +21,12 @@ const questions = [
     ],
   },
   {
-    question: "How many Infinity Stones are there?",
+    question: "What is the only food that cannot go bad?",
     answerOpts: [
-      { answer: "5", isCorrect: false },
-      { answer: "6", isCorrect: true },
-      { answer: "7", isCorrect: false },
-      { answer: "10", isCorrect: false },
+      { answer: "Dark chocolate", isCorrect: false },
+      { answer: "Peanut butter", isCorrect: false },
+      { answer: "Canned tuna", isCorrect: false },
+      { answer: "Honey", isCorrect: true },
     ],
   },
 ];
@@ -43,10 +43,12 @@ function Quiz() {
             <p className="text-lg font-semibold text-gray-500 py-4">
               Question 1/3
             </p>
-            <p className="text-2xl font-medium">{questions[0].question}</p>
+            <p className="text-2xl font-medium">
+              {questions[currentQes].question}
+            </p>
           </div>
           <div className="flex flex-col items-start py-8">
-            {questions[0].answerOpts.map((answeropt) => (
+            {questions[currentQes].answerOpts.map((answeropt) => (
               <button className="hover:bg-slate-300 hover:text-bg-dark text-white border px-4 py-2 my-2 rounded font-semibold">
                 {answeropt.answer}
               </button>
