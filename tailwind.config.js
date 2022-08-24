@@ -2,7 +2,22 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    screens: {
+      sm: "480px",
+      md: "768px",
+      lg: "976px",
+      xl: "1440px",
+    },
+    fontFamily: {
+      sans: ["Poppins", "sans-serif"],
+    },
+    extend: {
+      colors: {
+        "bg-white": "#f7eee8",
+        "bg-dark": "#334155",
+        "tx-light": "#7dd3fc",
+      },
+    },
   },
   plugins: [],
 };
